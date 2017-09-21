@@ -1,0 +1,106 @@
+.grid {
+    display: grid;
+    grid-template-areas: "a a " "b c";
+    grid-template-rows: 1fr 544px;
+    grid-template-columns: 1088px 1fr;
+    height: 100vh;
+    grid-gap: 1px;
+    color: white;
+}
+
+#topmenu {
+    grid-area: a;
+    background-color: black;
+}
+
+.canvasarea {
+    grid-area: b;
+    background-color: blue;
+}
+
+.rightsidebar {
+    grid-area: c;
+    background-color: black;
+}
+
+.menu ul li {
+    padding: 10px;
+    border-width: 1px;
+    border-color: white;
+    border-style: outset;
+}
+
+.menu ul > li:hover {
+    background-color: #8a3e08;
+}
+
+.menu ul ul > li:hover {
+    background-color: #8a3e08;
+}
+
+.menu ul li, .menu ul {
+    display: inline-block;
+}
+
+.menu ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: #071c23;
+}
+
+.menu ul ul {
+    display: none;
+    position: absolute;
+    background-color: #071c23;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+.menu ul a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu ul ul a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover ul {
+    display: block;
+}
+
+.menu li:hover li {
+    display: block;
+}
+
+#canvas {
+    background-image: url("bg5.jpg");
+}
+
+#mazepref {
+    background-color: #071c23;
+    height: auto;
+    margin: 2px;
+}
+
+#algpref{
+    background-color: #071c23;
+    height: auto;
+    margin: 2px;
+}
+
+
+#aboutwin {
+    height: 100%;
+    width: 100%;
+}
+#helpwin {
+    height: 100%;
+    width: 100%;
+}
+#prefwin {
+    height: 100%;
+    width: 100%;
+}

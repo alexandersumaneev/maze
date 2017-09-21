@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maze</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body onload="loadPage()">
+<div class="grid">
+    <div id="topmenu">
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Файл</a>
+                    <ul>
+                        <li><a href="#">Открыть</a></li>
+                        <li><a href="#">Сохранить</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="prefOpen()">Настройки</a></li>
+                <li><a href="#">Справка</a>
+                    <ul>
+                        <li><a href="#" onclick="helpOpen()">Помощь</a></li>
+                        <li><a href="#" onclick="aboutOpen()">О программе</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="rightsidebar">
+        <div id="mazepref">
+            <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
+            <h4>Что поставить на поле</h4>
+            <p>
+                <input type="radio" value="ship" checked name="obtype" onchange="changeOb()"/>Корабль
+            </p>
+            <p>
+                <input type="radio" value="planet" name="obtype" onchange="changeOb()"/>Красный квадрат
+            </p>
+            <p>
+                <input type="radio" value="wall" name="obtype" onchange="changeOb()"/>Стенка
+            </p>
+            <p><input type="button" onclick="init(),drawMaze()" value=" Сгенерировать новый "></p>
+        </div>
+
+        <div id="algpref">
+            <h4>Алгоритм поиска пути</h4>
+            <p>
+                <input type="radio" value="wave" checked name="algtype" onchange="changeAlg()"/>Волновой
+            </p>
+            <p>
+                <input type="radio" value="rigthhand" name="algtype" onchange="changeAlg()"/>Правой руки
+            </p>
+            <p><input id="findway" type="button" value=" Найти путь" onclick="callAlg()"></p>
+            <p><input type="button" value=" Стоп" onclick="stop=true;"></p>
+        </div>
+    </div>
+
+    <div class="canvasarea">
+        <canvas width="1088" height="544" id="canvas">
+        </canvas>
+        <div id="aboutwin">
+            <h2>О программе</h2>
+            <button type="button" onClick="showCanvas()">закрыть</button>
+        </div>
+        <div id="helpwin">
+            <h2>Справка</h2>
+            <button type="button" onClick="showCanvas()">закрыть</button>
+        </div>
+        <div id="prefwin">
+            <h2>Настройки</h2>
+            <button type="button" onClick="showCanvas()">закрыть</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
